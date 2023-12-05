@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Ray's Grocery</title>
+    <title>Ray's Grocery</title>
+    <link rel="stylesheet" type="text/css" href="Checkout.css">
 </head>
 <body>
 

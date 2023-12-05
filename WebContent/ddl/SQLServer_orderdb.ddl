@@ -182,6 +182,7 @@ INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Sing
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Louisiana Fiery Hot Pepper Sauce',2,'32 - 8 oz bottles',21.05);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Laughing Lumberjack Lager',1,'24 - 12 oz bottles',14.00);
 
+
 INSERT INTO warehouse(warehouseName) VALUES ('Main warehouse');
 INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (1, 1, 5, 18);
 INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (2, 1, 10, 19);

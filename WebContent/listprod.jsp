@@ -1,6 +1,8 @@
 <%@ page import="java.sql.*,java.net.URLEncoder" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ include file="header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,43 +17,29 @@
 <input type="text" name="productName" size="50">
 <input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
 </form>
-<style>
-    form {
-      margin: 20px;
-      font-family: Arial, sans-serif;
-    }
+<form method="get" action="listprod.jsp">
+    <!-- Remove the text box for productName -->
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
+    <!-- Add a dropdown for category -->
+    <label for="category">Select Category:</label>
+    <select name="category" id="category">
+        <option value="">All Categories</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
 
-    input[type="submit"], input[type="reset"] {
-      padding: 10px 15px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
+        <!-- Add more categories as needed -->
+    </select>
 
-    input[type="reset"] {
-      background-color: #f44336;
-    }
+    <input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
+</form>
 
 
-    .additional-text {
-      color: #fff;
-      font-style: italic;
-      font-size: 0.9em;
-    }
-  </style>
 <% // Get product name to search for
 String name = request.getParameter("productName");
-		
+String category = request.getParameter("category");
+
 //Note: Forces loading of SQL Server driver
 try
 {	// Load driver class
@@ -76,8 +64,11 @@ try(
 	ResultSet rst;
 	
 	if(name != null){
-		String q = "SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%" + name + "%'";
-		rst = stmt.executeQuery(q);
+	    PreparedStatement query = con.prepareStatement("SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%?%'");
+	    query.setString(1, name);
+		//String q = "SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%" + name + "%'";
+		rst = query.executeQuery();
+
 		%> <h1>Products containing '<%= name %>'</h1> 
 
 	<tr>
@@ -89,6 +80,22 @@ try(
 			</thead>
 	</tr>
 	<%
+	}else if(category != null && !category.equals("")){
+	    PreparedStatement query = con.prepareStatement("SELECT productId, productName, productPrice FROM product WHERE categoryId = ?");   //update the db
+	    query.setString(1, category);
+	    rst = query.executeQuery();
+
+    		%> <h1 align = "center">All Products </h1>
+
+    	<tr>
+    		<table>
+    			<thead>
+    				<th></th>
+    				<th>Product Name</th>
+    				<th>Price</th>
+    			</thead>
+    	</tr>
+    	<%
 	}else{
 		rst = stmt.executeQuery("SELECT productId, productName, productPrice FROM product;");
 		%> <h1 align = "center">All Products </h1>
@@ -125,18 +132,6 @@ catch(SQLException ex){
 	out.println(ex);
 
 }
-// Make the connection
-
-// Print out the ResultSet
-
-// For each product create a link of the form
-// addcart.jsp?id=productId&name=productName&price=productPrice
-// Close connection
-
-// Useful code for formatting currency values:
-// NumberFormat currFormat = NumberFormat.getCurrencyInstance();
-// out.println(currFormat.format(5.0);	// Prints $5.00
-
 %>
 
 </body>

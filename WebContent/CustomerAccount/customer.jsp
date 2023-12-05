@@ -2,12 +2,15 @@
 <html>
 <head>
 <title>Customer Page</title>
+<link rel="stylesheet" type="text/css" href="CustomerStyles.css">
 </head>
 <body>
 
-<%@ include file="auth.jsp"%>
+
+
 <%@ page import="java.text.NumberFormat" %>
 <%@ include file="jdbc.jsp" %>
+<%@ include file="header.jsp" %>
 
 <%
 
@@ -56,7 +59,26 @@ try{
         <tr><th>Postal Code</th><td><%= pCode %></td></tr>
         <tr><th>Country</th><td><%= country %></td></tr>
         <tr><th>User id</th><td><%= userName %></td></tr>
-        </table>"
+        </table>
+
+
+        <!-- Buttons for editing and viewing orders -->
+        <form action="GetNewAddress.jsp" method="post">
+            <input type="hidden" name="customerId" value="<%= cid %>">
+            <input type="submit" value="Change Address">
+        </form>
+        <form action="ChangePassword.jsp" method="post">
+            <input type="hidden" name="customerId" value="<%= cid %>">
+            <input type="submit" value="Change Password">
+        </form>
+        <form action="ViewOrders.jsp" method="post">
+            <input type="hidden" name="customerId" value="<%= cid %>">
+            <input type="submit" value="View Orders">
+        </form>
+
+
+        </body>
+        </html>
 
 <%
         //close everything
@@ -68,6 +90,4 @@ try{
 }
 %>
 
-</body>
-</html>
 

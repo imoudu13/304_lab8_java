@@ -76,9 +76,6 @@
 
         PreparedStatement updateWarehouse = con.prepareStatement("UPDATE productinventory SET quantity = ? WHERE productId = ?;");   //update the db
 
-        AtomicBoolean iterate = new AtomicBoolean(true);     //this variable will only be changed when opne of the warehouses doesn't have enough quantity for a product, that way the program won't try to update the products
-
-
         // TODO: For each item verify sufficient quantity available in warehouse 1.
 
         Iterator<Map.Entry<Integer, Integer>> iterator = products.entrySet().iterator();

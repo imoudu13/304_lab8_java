@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+a:hover {
+    text-decoration: underline;
+}
+a.logout {
+    color: #ffffff;
+    margin-left: 10px;
+}
+.header {
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+.left-link{
+    margin-right: 15px;
+}
+.left-links a {
+    color: #ffffff;
+    text-decoration: none;
+    float: left;
+    margin-right: 10px;
+}
+.right-links {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+    float: right;
+}
+.user-info {
+    color: #ffffff;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.user-name {
+    color: #ffffff;
+    margin-right: 10px;
+}
+.login-link {
+    color: #ffffff;
+    margin-left: 10px;
+}
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+.clear {
+    clear: both;
+}

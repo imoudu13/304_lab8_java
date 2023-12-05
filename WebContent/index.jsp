@@ -1,34 +1,30 @@
+<%@ include file="header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Mo and Gav's</title>
+        <title>Sole Flare</title>
+        <link rel="stylesheet" type="text/css" href="Index.css">
 </head>
 <body>
-<h1 align="center">Mo and Gav's</h1>
+    <h1 id="welcome-heading" align="center">Welcome to Sole Flare</h1>
 
-<h2 align="center"><a href="login.jsp">Login</a></h2>
+    <img src="Logo.png" alt="Logo" class="center" width="200" height="400">
 
-<h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
+    <div id="main-content">
 
-<h2 align="center"><a href="listorder.jsp">List All Orders</a></h2>
-
-<h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
-
-<h2 align="center"><a href="admin.jsp">Administrators</a></h2>
-
-<h2 align="center"><a href="logout.jsp">Log out</a></h2>
-
-<%
-	String userName = (String) session.getAttribute("authenticatedUser");
-	if (userName != null)
-		out.println("<h3 align=\"center\">Signed in as: "+userName+"</h3>");
-%>
-
-<h4 align="center"><a href="ship.jsp?orderId=1">Test Ship orderId=1</a></h4>
-
-<h4 align="center"><a href="ship.jsp?orderId=3">Test Ship orderId=3</a></h4>
-
+            <%if(authenticated && isArnold.equals("arnold")){%>
+                    <h2 align="center"><a href="listorder.jsp">List All Orders</a></h2>
+                    <h2 align="center"><a href="Admin/admin.jsp">Administrator Page</a></h2>
+                    <h4 align="center"><a href="ship.jsp?orderId=1">Test Ship orderId=1</a></h4>
+                    <h4 align="center"><a href="ship.jsp?orderId=3">Test Ship orderId=3</a></h4>
+            <%}else if(authenticated){%>
+                    <h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
+                    <h2 align="center"><a href="CustomerAccount/customer.jsp">View Your Information</a></h2>
+            <%}else{%>
+                    <h2><a href="login.jsp">Login</a></h2>
+                    <h2><a href="Register.jsp">Create An Account</a></h2>
+            <%}%>
+    </div>
 </body>
-</head>
-
+<html>
 
