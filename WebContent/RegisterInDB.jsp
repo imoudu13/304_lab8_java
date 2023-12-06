@@ -33,11 +33,9 @@ String pw = request.getParameter("password");
 
 	}catch(SQLException ex){
 	    out.println(ex);
-	}
-
+	}finally{closeConnection();}
 	request.setAttribute("username", userid);
     request.setAttribute("password", pw);
     response.sendRedirect("validateLogin.jsp");
-
 %>
 

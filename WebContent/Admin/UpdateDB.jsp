@@ -23,7 +23,7 @@ try{
         pst.setInt(2, Integer.parseInt("2"));
 
         pst.executeUpdate();
-    }else if(updateDB.equals("delete")){
+    }else{
         String prodId = request.getParameter("prodId");
 
         PreparedStatement pst = con.prepareStatement("DELETE FROM orderproduct WHERE productId = ?;");
@@ -37,8 +37,6 @@ try{
         pst = con.prepareStatement("DELETE FROM product WHERE productId = ?;");
         pst.setInt(1, Integer.parseInt(prodId));
         pst.executeUpdate();
-    }else{
-
     }
 
 }catch(SQLException ex){

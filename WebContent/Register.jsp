@@ -3,10 +3,26 @@
 <html>
 <head>
     <title>Customer Registration</title>
+    <style>
+            .theForm {
+                max-width: 400px;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+        </style>
 </head>
 <body>
 
-
+<div class="theForm">
     <form action="RegisterInDB.jsp" method="post">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" required><br>
@@ -43,5 +59,6 @@
 
         <input type="submit" value="Register">
     </form>
+</div>
 </body>
 </html>

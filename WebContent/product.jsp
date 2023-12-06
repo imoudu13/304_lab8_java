@@ -6,7 +6,21 @@
 <html>
 <head>
     <title>Mo and Gav's Store - Product Information</title>
-    <link href="Product.css" rel="stylesheet">
+<style>
+        body {
+            text-align: center;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: red;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+</style>
 </head>
 <body>
 

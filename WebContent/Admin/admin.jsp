@@ -12,10 +12,10 @@
 // TODO: Write SQL query that prints out total order amount by day
 
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();       //object for formatting doubles as currency
-String isAdmin = isArnold;
+String admin = isAdmin;
 
-
-if(isAdmin.equals("arnold")){
+//checks is the current user is the admin
+if(admin.equals("arnold")){
     try{
         getConnection();
 

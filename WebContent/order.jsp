@@ -5,12 +5,26 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ include file="header.jsp" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>Order Processing</title>
-<link rel="stylesheet" type="text/css" href="Order.css">
+<style>
+        table {
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+            color: red;
+        }
+        th,td {
+                background-color: #ffffff;
+                color: #ff0000;
+        }
+
+</style>
 </head>
 <body>
 
@@ -37,9 +51,9 @@ try{
 }
 
 if (productList.isEmpty()){
-    out.println("<H1>Your shopping cart is empty!</H1>");
+    out.println("<h1>Your shopping cart is empty!</h1>");
 }else if(!startQuery){
-    out.println("<H1>Customer Id is invalid. Please return to the previous page and try again.</H1>");
+    out.println("<h1>Customer Id is invalid. Please return to the previous page and try again.</h1>");
 }else{
     try(
 	    Connection con = DriverManager.getConnection(url, uid, pw);
@@ -147,5 +161,5 @@ if (productList.isEmpty()){
     }
 }
 %>
-</BODY>
-</HTML>
+</body>
+</html>

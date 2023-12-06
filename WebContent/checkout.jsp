@@ -1,7 +1,37 @@
+<%@ include file="header.jsp" %>
+
 <html>
 <head>
     <title>Ray's Grocery</title>
-    <link rel="stylesheet" type="text/css" href="Checkout.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+    }
+    h1{
+        color: #ff0000;
+    }
+    h3{
+        color: #ff0000;
+    }
+    table {
+        width: 70%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        color: #ff0000;
+    }
+
+    th, td {
+        border: 1px solid #ffffff;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #ffffff;
+        color: #ff0000;
+    }
+</style>
 </head>
 <body>
 

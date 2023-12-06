@@ -1,6 +1,6 @@
 <%
 	boolean authenticated = session.getAttribute("authenticatedUser") == null ? false : true;
-	String isArnold = authenticated ? session.getAttribute("authenticatedUser").toString() : "";
+	String isAdmin = authenticated ? session.getAttribute("authenticatedUser").toString() : "";
 
 	if (!authenticated)
 	{
