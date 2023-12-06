@@ -1,14 +1,14 @@
 <%@ include file="auth.jsp" %>
 
+<head>
+<link rel="stylesheet" type="text/css" href="Header.css">
 <div>
-    <!-- Left-aligned links -->
     <div style="float: left;">
         <a href="..\index.jsp">Home</a>
         <a href="..\listprod.jsp">Products</a>
         <a href="..\showcart.jsp">Cart</a>
     </div>
 
-    <!-- Right-aligned link -->
 
     <div style="float: right;">
         <%if(authenticated){
@@ -22,7 +22,7 @@
         <%}%>
     </div>
 
-    <div style="clear: both;"></div> <!-- Clear the float to prevent layout issues -->
+    <div style="clear: both;"></div>
 
     <hr>
 </div>

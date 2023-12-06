@@ -1,5 +1,7 @@
 <%@ include file="auth.jsp" %>
-
+<head>
+    <link rel="stylesheet" type="text/css" href="../Header.css">
+</head>
 <div>
     <!-- Left-aligned links -->
     <div style="float: left;">

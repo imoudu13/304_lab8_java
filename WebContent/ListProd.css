@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+h1{
+    color: #ff0000;
+}
+table {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    width: 70%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    color: #ff0000;
+    border-radius: 10px;
+}
+
+th, td {
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffffff;
+    color: #ff0000;
+}
+form {
+    color: #333; /* Set the desired text color */
+}
+a {
+    color: #ff0000; /* Set the desired text color for normal state */
+}
+/* ListProd.css */
+.centered-form {
+    margin: 0 auto;
+    text-align: center;
+}
+

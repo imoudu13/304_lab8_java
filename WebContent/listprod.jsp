@@ -11,16 +11,13 @@
 </head>
 <body>
 
-<h1>Search for the products you want to buy:</h1>
+<h1 align="center">Search for the products you want to buy:</h1>
 
-<form method="get" action="listprod.jsp">
+<form method="get" action="listprod.jsp" class="centered-form">
 <input type="text" name="productName" size="50">
-<input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
+<input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
-<form method="get" action="listprod.jsp">
-    <!-- Remove the text box for productName -->
-
-    <!-- Add a dropdown for category -->
+<form method="get" action="listprod.jsp" class="centered-form">
     <label for="category">Select Category:</label>
     <select name="category" id="category">
         <option value="">All Categories</option>
@@ -28,13 +25,9 @@
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
-
-        <!-- Add more categories as needed -->
     </select>
-
-    <input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
+    <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
-
 
 <% // Get product name to search for
 String name = request.getParameter("productName");

@@ -2,12 +2,9 @@
 <html>
 <head>
 <title>Customer Page</title>
-<link rel="stylesheet" type="text/css" href="CustomerStyles.css">
+<link rel="stylesheet" type="text/css" href="Customer.css">
 </head>
 <body>
-
-
-
 <%@ page import="java.text.NumberFormat" %>
 <%@ include file="jdbc.jsp" %>
 <%@ include file="header.jsp" %>
@@ -47,7 +44,7 @@ try{
 
         //print the table
 %>
-        <table border='1'>
+        <table>
         <tr><th>ID</th><td><%= cid %></td></tr>
         <tr><th>First Name</th><td><%= fName %></td></tr>
         <tr><th>Last Name</th><td><%= lName %></td></tr>
@@ -61,8 +58,6 @@ try{
         <tr><th>User id</th><td><%= userName %></td></tr>
         </table>
 
-
-        <!-- Buttons for editing and viewing orders -->
         <form action="GetNewAddress.jsp" method="post">
             <input type="hidden" name="customerId" value="<%= cid %>">
             <input type="submit" value="Change Address">

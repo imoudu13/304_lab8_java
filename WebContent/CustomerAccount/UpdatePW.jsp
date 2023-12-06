@@ -15,6 +15,8 @@
         pst.executeUpdate();
     }catch(SQLException exe){
         out.println(exe);
+    }finally{
+        closeConnection();
     }
 %>
 

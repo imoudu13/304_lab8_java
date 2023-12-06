@@ -2,17 +2,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     color: #333;
-    border: 20px solid #eef109;
-    border-radius: 20px;
 }
 h1{
-    color: #f5ff02;
+    color: #ff0000;
 }
 h3{
-    color: #f5ff02;
+    color: #ff0000;
 }
 table {
-    box-shadow: 0 0 20px rgba(238, 241, 9, 0.7);
     width: 70%;
     border-collapse: collapse;
     margin: 0 auto;
@@ -24,7 +21,6 @@ th, td {
     padding: 8px;
     text-align: left;
 }
-
 th {
     background-color: #f5ff02;
     color: #0410fa;

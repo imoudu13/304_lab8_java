@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+
+}
+table {
+    margin: 0 auto;
+
+}
+form {
+    display: inline-block;
+    margin-top: 10px;
+}
