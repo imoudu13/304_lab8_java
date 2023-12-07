@@ -62,7 +62,8 @@ try ( Connection con = DriverManager.getConnection(urlForLoadData, uid, pw); )
 catch (Exception e)
 {
     out.print(e);
-}  
+}
+response.sendRedirect("index.jsp");
 %>
 </body>
 </html> 
