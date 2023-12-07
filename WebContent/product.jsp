@@ -76,6 +76,21 @@ finally
 }
 %>
 
+<div>
+    <h2>Write a Review</h2>
+    <form action="submitReview.jsp" method="post">
+        <input type="hidden" name="productId" value="<%= productId %>">
+        <label for="username">Your Customer Id:</label>
+        <input type="text" name="customerid" required><br>
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" min="1" max="5" required><br>
+        <label for="comment">Comment:</label><br>
+        <textarea name="comment" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Submit Review">
+    </form>
+</div>
+
+
 </body>
 </html>
 
