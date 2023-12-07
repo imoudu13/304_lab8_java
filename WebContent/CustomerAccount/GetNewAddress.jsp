@@ -8,6 +8,22 @@
 <html>
 <head>
     <title>Update Information</title>
+    <style>
+            form{
+                max-width: 400px;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+    </style>
 </head>
 <body>
     <form action="UpdateAddress.jsp" method="post">

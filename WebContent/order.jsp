@@ -134,13 +134,16 @@ if (productList.isEmpty()){
 		<%
 
 			//put the product in order product
-			String executeQuery = "INSERT INTO orderproduct VALUES (" + orderId + ", " + productId + ", " + qty + ", " + subTotal + ")";
-			PreparedStatement insertQ = con.prepareStatement(executeQuery);
+			PreparedStatement insertQ = con.prepareStatement("INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (?, ?, ?, ?)");
+			insertQ.setInt(1, orderId);
+			insertQ.setInt(2, Integer.parseInt(productId));
+			insertQ.setInt(3, qty);
+			insertQ.setDouble(4, subTotal);
 			insertQ.executeUpdate();
 			
-			//remove the product from the lsit
-		    }
 
+		    }
+		    //remove the product from the lsit
 		    productList.clear();
 		
 		%>

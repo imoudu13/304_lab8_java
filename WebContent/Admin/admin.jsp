@@ -2,6 +2,21 @@
 <html>
 <head>
 <title>Administrator Page</title>
+<style>
+    body {
+        text-align: center;
+
+    }
+    table {
+        margin: 0 auto;
+
+    }
+    form {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    th, td{ color: red; text-align: center; }
+</style>
 </head>
 <body>
 <%@ page import="java.text.NumberFormat" %>
@@ -19,7 +34,7 @@ if(admin.equals("arnold")){
     try{
         getConnection();
 
-        out.println("<table border='1'>");
+        out.println("<table>");
         out.println("<tr><th>Order Date</th><th>Total Order Amount</th></tr>");
 
         Statement stmt = con.createStatement();
@@ -44,7 +59,6 @@ if(admin.equals("arnold")){
 }
 %>
 
-<!-- Button for listing customers, showing total sales/orders, adding new product etc. -->
         <form action="ListAllCustomer.jsp" method="post">
             <input type="submit" value="List All Customers">
         </form>

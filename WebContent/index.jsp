@@ -16,8 +16,6 @@
             <%if(authenticated && isArnold.equals("arnold")){%>
                     <h2 align="center"><a href="listorder.jsp">List All Orders</a></h2>
                     <h2 align="center"><a href="Admin/admin.jsp">Administrator Page</a></h2>
-                    <h4 align="center"><a href="ship.jsp?orderId=1">Test Ship orderId=1</a></h4>
-                    <h4 align="center"><a href="ship.jsp?orderId=3">Test Ship orderId=3</a></h4>
             <%}else if(authenticated){%>
                     <h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
                     <h2 align="center"><a href="CustomerAccount/customer.jsp">View Your Information</a></h2>

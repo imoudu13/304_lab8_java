@@ -7,6 +7,21 @@
 <html>
 <head>
 <title>Previous Orders</title>
+<style>
+    body {
+    align-items: center;
+      text-align: center;
+    }
+    table {
+        margin: 0 auto;
+
+    }
+    form {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    th, td{ color: red; text-align: center; }
+</style>
 </head>
 <body>
 
@@ -22,7 +37,7 @@ try{
 
     ResultSet rst = pst.executeQuery();
 
-    out.println("<table border='1'>");
+    out.println("<table>");
     out.println("<tr><th>Order Id</th><th>Order Date</th><th>Total Order Amount</th></tr>");
 
 

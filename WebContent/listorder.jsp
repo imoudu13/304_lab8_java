@@ -5,7 +5,22 @@
 <html>
 <head>
     <title>Mo n' Gav's</title>
-    <link rel="stylesheet" type="text/css" href="ListOrder.css">
+    <style>
+        h1{ color: red; }
+        body {
+        align-items: center;
+          text-align: center;
+        }
+        table {
+            margin: 0 auto;
+
+        }
+        form {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        th, td{ color: red; text-align: center; }
+    </style>
 </head>
 <body>
 
@@ -39,7 +54,7 @@ try(
 ){
 	ResultSet rst = stmt.executeQuery("SELECT orderId, orderDate, customer.customerId, firstName, lastName, totalAmount FROM customer JOIN ordersummary ON customer.customerId = ordersummary.customerId;");
 
-	%> <table border="1">
+	%> <table>
 	    <tbody>
        				<tr>
        					<th>Order Id</th>
@@ -82,7 +97,7 @@ try(
 			%>
 			<tr align = "right">
             			    <td colspan="4">
-            			        <table border ="1">
+            			        <table>
             			            <tbody>
             			                <tr>
             			                <th>Product Id</th>

@@ -2,7 +2,21 @@
 <%@ include file="..\jdbc.jsp" %>
 <%@ include file="header.jsp" %>
 
-
+<head>
+<style>
+    body {
+        text-align: center;
+    }
+    table {
+        margin: 0 auto;
+    }
+    form {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    th, td{ color: red; text-align: center; }
+</style>
+</head>
 <%
 try{
     getConnection();
@@ -10,7 +24,7 @@ try{
     PreparedStatement pst = con.prepareStatement("SELECT firstname, lastname, customerId FROM customer;");
 
     ResultSet rst = pst.executeQuery();
-    out.println("<table border='1'>");
+    out.println("<table>");
     out.println("<tr><th>Name</th><th>Customer Id</th></tr>");
 
     while(rst.next()){

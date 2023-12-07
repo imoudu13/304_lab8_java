@@ -21,10 +21,9 @@
     <label for="category">Select Category:</label>
     <select name="category" id="category">
         <option value="">All Categories</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        <option value="1">Basketball Shoes</option>
+        <option value="2">Soccer Cleats</option>
+        <option value="3">Street Shoes</option>
     </select>
     <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
@@ -57,8 +56,8 @@ try(
 	ResultSet rst;
 	
 	if(name != null){
-	    PreparedStatement query = con.prepareStatement("SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%?%'");
-	    query.setString(1, name);
+	    PreparedStatement query = con.prepareStatement("SELECT productId, productName, productPrice FROM product WHERE productName LIKE ?");
+	    query.setString(1, "%" + name + "%");
 		//String q = "SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%" + name + "%'";
 		rst = query.executeQuery();
 

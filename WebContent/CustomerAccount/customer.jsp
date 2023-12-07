@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Customer Page</title>
-<link rel="stylesheet" type="text/css" href="Customer.css">
+    <title>Customer Page</title>
+    <link rel="stylesheet" type="text/css" href="Customer.css">
 </head>
 <body>
 <%@ page import="java.text.NumberFormat" %>
