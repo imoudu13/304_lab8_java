@@ -10,15 +10,24 @@
         body {
             text-align: center;
         }
-
         h2, h3 {
             text-align: center;
             color: red;
         }
-
         img {
             display: block;
             margin: 0 auto;
+        }
+        #reviewsContainer {
+            text-align: center;
+        }
+
+        #reviewList {
+            float: none;
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
         }
 </style>
 </head>
@@ -76,6 +85,9 @@ finally
 }
 %>
 
+
+<div id="reviewscontainer">
+
 <div>
     <h2>Write a Review</h2>
     <form action="submitReview.jsp" method="post">
@@ -90,6 +102,35 @@ finally
     </form>
 </div>
 
+
+<div id="reviewList">
+    <h2>Product Reviews</h2>
+    <ul>
+        <%
+            try {
+                getConnection();
+                PreparedStatement reviewStmt = con.prepareStatement("SELECT reviewComment, reviewRating, firstName, lastName FROM review JOIN customer ON review.customerId = customer.customerId WHERE productId = ?");
+                reviewStmt.setInt(1, Integer.parseInt(productId));
+
+                ResultSet reviewResult = reviewStmt.executeQuery();
+
+                while(reviewResult.next()){
+        %>
+                    <li>
+                        <strong><%= reviewResult.getString("firstName") + " " + reviewResult.getString("lastName") %></strong> rated it <%= reviewResult.getInt("reviewRating") %> stars<br>
+                        <%= reviewResult.getString("reviewComment") %>
+                    </li>
+        <%
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } finally {
+                closeConnection();
+            }
+        %>
+    </ul>
+</div>
+</div>
 
 </body>
 </html>

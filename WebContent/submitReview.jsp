@@ -10,7 +10,7 @@ String comment = request.getParameter("comment");
 try {
     getConnection();
 
-    PreparedStatement submitReviewStatement = con.prepareStatement("INSERT INTO reviews (reviewRating, customerId, productId, reviewComment) VALUES (?, ?, ?, ?)");
+    PreparedStatement submitReviewStatement = con.prepareStatement("INSERT INTO review (reviewRating, customerId, productId, reviewComment) VALUES (?, ?, ?, ?)");
     submitReviewStatement.setInt(3, Integer.parseInt(productId));
     submitReviewStatement.setInt(2, Integer.parseInt(customerid));
     submitReviewStatement.setInt(1, rating);
