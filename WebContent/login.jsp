@@ -55,6 +55,8 @@
 <input class="submit" type="submit" name="Submit2" value="Log In">
 </form>
 
+<button onclick="window.location.href='ForgotPassword.jsp'">Forgot Password?</button>
+
 </div>
 
 </div>
